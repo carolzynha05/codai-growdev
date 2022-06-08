@@ -1,6 +1,3 @@
-/** @format */
-
-//const modal = new bootstrap.Modal('transaction-modal');
 let logged = sessionStorage.getItem('logged');
 const session = localStorage.getItem('session');
 let data = {
@@ -29,11 +26,15 @@ document
 		});
 		saveData(data);
 		e.target.reset();
-		//Modal.hide();
-
+		
+		
 		getTransactions();
 
+		document.getElementsByClassName("btn-close")[0].click();
+
 		alert('Lançamento adicionado com sucesso.');
+
+		
 	});
 
 checkLogged();
@@ -62,21 +63,6 @@ function logout() {
 
 	window.location.href = 'index.html';
 }
-
-// function getTotal() {
-// 	const transactions = data.transactions;
-// 	let total = 100;
-
-// 	transactions.forEach((item) => {
-// 		if (item.type === '1') {
-// 			total += item.value;
-// 		} else {
-// 			total -= item.value;
-// 		}
-// 	});
-
-// 	document.getElementById('total').innerHTML = `R$ ${total.toFixed(2)}`;
-// }
 
 function getTransactions() {
 	const transactions = data.transactions;
