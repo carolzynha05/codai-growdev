@@ -1,6 +1,4 @@
-/** @format */
 
-//const modal = new bootstrap.Modal('transaction-modal');
 let logged = sessionStorage.getItem('logged');
 const session = localStorage.getItem('session');
 let data = {
@@ -34,7 +32,8 @@ document
 		});
 		saveData(data);
 		e.target.reset();
-		//Modal.hide();
+		
+		document.getElementsByClassName("btn-close")[0].click();
 
 		getCashIn();
 		getCashOut();
